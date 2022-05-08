@@ -1,10 +1,12 @@
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import {TopBar} from './components'
 
 function App() {
   return (
-    <div className="">
-      <h1>hello</h1>
-    </div>
+    <>
+      <TopBar/>
+    </>
   );
 }
 
