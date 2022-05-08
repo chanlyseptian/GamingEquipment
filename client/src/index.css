@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
 
 * {
   margin: 0;
@@ -10,4 +10,35 @@
 body {
   font-family: 'Lato', sans-serif;
   /* font-family: 'Iceland', cursive; */
+}
+
+/* TopBar */
+.top-bar {
+  font-family: 'Iceland', cursive;
+}
+
+.top-bar-img {
+  width: 90px;
+  height: 90px;
+  margin: 60px 20px;
+  margin-top: 18px;
+  ;
+}
+
+/* Navbar */
+.border-nav {
+  height:3px;
+  background-color: rgba(247, 189, 189, 0.363);
+}
+.navigation li a {
+  font-family: 'Iceland', cursive;
+  font-size: 25px;
+  color: rgb(126, 3, 3);
+  cursor: pointer;
+  padding: 15px;
+}
+
+.navigation li a:hover {
+  color: rgb(231, 27, 27); 
+  
 }
