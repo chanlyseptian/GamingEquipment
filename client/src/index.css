@@ -42,3 +42,18 @@ body {
   color: rgb(231, 27, 27); 
   
 }
+
+/* Homepage */
+.homepage {
+  font-family: 'Iceland', cursive;
+  font-weight: bold;
+  color: rgb(177, 53, 53);
+}
+
+.btn-list {
+  background-color: rgb(224, 50, 50) !important;
+}
+
+.btn-list:hover {
+  background-color: rgb(160, 40, 40) !important;
+}

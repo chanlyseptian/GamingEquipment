@@ -1,6 +1,10 @@
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import { TopBar, Navbar } from './components'
+import { TopBar, Navbar, MainContent } from './components'
+import { Homepage, ListItems, Members, Brands } from './pages'
+
+
+import BorderNav from './helpers/BorderNav'
 
 function App() {
   return (
@@ -8,13 +12,18 @@ function App() {
       <div className="container ">
         <TopBar />
       </div>
-      <div className="border-nav mb-2">
-        
-      </div>
-      <div className="container">
-        <Navbar />
-      </div>
 
+      <BorderNav />
+      <div className="bg-danger bg-light">
+        <div className="container">
+          <Navbar /> 
+        </div>
+      </div>
+      <BorderNav />  
+
+      <MainContent />
+
+      
     </>
   );
 }
