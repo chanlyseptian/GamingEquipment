@@ -5,7 +5,7 @@ const LoadingBar = () => {
     <>
       <tr>
         <td colSpan="5">
-          Loading Bar
+          <h1 className="text-danger">Loading data...</h1>
         </td>
       </tr>
     </>

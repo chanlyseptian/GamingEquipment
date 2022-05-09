@@ -5,7 +5,7 @@ class ItemController {
         try {
             let items = await item.findAll({
                 order: [
-                    ['updatedAt', 'desc']
+                    ['id', 'asc']
                 ],
                 include: [member, brand]
             });

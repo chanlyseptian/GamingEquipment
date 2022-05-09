@@ -1,5 +1,6 @@
 import React from 'react'
 import {ListBrands} from '../'
+import {Outlet} from 'react-router-dom'
 
 const Brands = () => {
   return (
@@ -9,7 +10,10 @@ const Brands = () => {
           Brand List
         </h2>
       </div>
-      <ListBrands/>
+      <Outlet/>
+      <div className="row bg-light vh">
+
+      </div>
     </>
   )
 }

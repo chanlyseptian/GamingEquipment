@@ -3,7 +3,11 @@ const { brand, item } = require('../models');
 class BrandController {
     static async getBrands(req, res) {
         try {
-            let brands = await brand.findAll();
+            let brands = await brand.findAll({
+                order: [
+                    ['id', 'asc']
+                ]
+            });
             res.json(brands);
         }
         catch (e) {

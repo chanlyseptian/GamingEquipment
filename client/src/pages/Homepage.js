@@ -1,5 +1,6 @@
 import React from 'react'
 import {ListItems} from './'
+import {Outlet} from 'react-router-dom'
 
 const Homepage = () => {
   return (
@@ -9,7 +10,7 @@ const Homepage = () => {
           Member's Gaming Equipment
         </h2>
       </div>
-      <ListItems/>
+      <Outlet/>
     </>
   )
 }

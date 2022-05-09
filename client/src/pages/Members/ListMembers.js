@@ -1,16 +1,37 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { getMembers, removeMember } from '../../axios/memberAxios'
+import LoadingBar from '../../helpers/LoadingBar';
+import {
+  Link, useNavigate
+} from 'react-router-dom'
 
 const ListMembers = () => {
+  const [members, setMembers] = useState([]);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    getMembers(result => setMembers(result))
+  }, [members])
+
+
+  const deleteHandler = (id) => {
+    removeMember(id)
+    navigate('/members')
+
+  }
+
+
   return (
     <>
       <div className="row bg-light">
         <div className="col-9 mx-auto">
           <div className="w-100">
-            <a href="" className="btn btn-sm btn-danger btn-list my-2">
+            <Link to="/members/create" className="btn btn-sm btn-danger btn-list my-2">
               <span className="me-2">
               </span>
               + Add Member
-            </a>
+            </Link>
           </div>
           <div className="w-100">
             <table className="table table-borderd text-center">
@@ -18,19 +39,29 @@ const ListMembers = () => {
                 <tr className="table-secondary">
                   <th>Id</th>
                   <th>Name</th>
-                  <th>Subject</th>
-                  <th>Age</th>
+                  <th>Role</th>
+                  <th>Status</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="table">
-                  <td>Id</td>
-                  <td>Name</td>
-                  <td>Subject</td>
-                  <td>Age</td>
-                  <td>Actions</td>
-                </tr>
+                {
+                  members.length !== 0 ?
+                    members.map(member => {
+                      const { id, name, role, status } = member;
+                      return (
+                        <tr key={id}>
+                          <td>{id}</td>
+                          <td>{name}</td>
+                          <td>{role}</td>
+                          <td>{status}</td>
+                          <td>
+                            <Link to={`/members/edit/${id}`} className="btn btn-sm btn-success mx-2">Edit</Link>
+                            <button onClick={() => deleteHandler(+id)} className="btn btn-sm btn-danger">Delete</button>
+                          </td>
+                        </tr>)
+                    }) : <LoadingBar />
+                }
               </tbody>
             </table>
           </div>

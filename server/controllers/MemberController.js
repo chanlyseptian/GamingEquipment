@@ -3,7 +3,11 @@ const { member, item } = require('../models');
 class MemberController {
     static async getMembers(req, res) {
         try {
-            let members = await member.findAll();
+            let members = await member.findAll({
+                order: [
+                    ['id', 'asc']
+                ]
+            });
             res.json(members);
         }
         catch (e) {
